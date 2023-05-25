@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    
+    <!--box icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--custom css-->
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+</head>
+<body>
+
+    <!-- header design-->
+    <header class="header">
+        <a href="#" class="logo">AmenZa</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#terms">General Information</a>
+            <a href="#calculator">Predictor</a>
+            <!-- <a href="#output">Out</a> -->
+            <a href="#about">About</a>
+            <a href="#contact">Developer</a>
+        </nav>
+    </header>
+    <!--home section design-->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello!</h3>
+            <h1>Heart Disease Prediction</h1>
+            <h3>Using <span>Machine Learning</span></h3>
+            <p>The best place for calculate the heart disease.</p>
+            <h5>{{text1}} {{assis}}<br>{{text2}} {{predict}} {{text3}}</h5>
+            <a class="btn" href="#calculator">Let's Go</a>
+         </div>
+        <div class="home-img">
+            <img src="../static/images/h-img.png" alt="no">
+        </div>
+    </section>
+
+    <!--terms-->
+    <section class="terms" id="terms">
+       
+        <div class="terms-content">
+            <h2 class="heading">General <span>Information</span></h2>
+            <div class="scroll-bar">
+            <h3>Demographic</h3>
+            <p>>> Age: <br>The risk of heart disease increases with age. Men over the age of 45 and women over the age of 55 are at higher risk of developing heart disease.
+                <br>>> Gender: <br>Men are more likely to develop heart disease than premenopausal women. However, after menopause, women's risk of heart disease increases, and it becomes similar to that of men.
+                <br>>> Race/ethnicity: <br>Some racial and ethnic groups have a higher risk of heart disease than others. For example, African Americans, Hispanic/Latino Americans, and Native Americans have a higher risk of heart disease than non-Hispanic whites.
+                <br>>> Education level: <br>People with a lower level of education are more likely to develop heart disease than those with a higher level of education. This may be due to a lack of knowledge about healthy lifestyle habits and limited access to healthcare.
+                <br>>> Geographic location: <br>People living in certain regions may have a higher risk of heart disease due to environmental factors such as air pollution, lack of access to healthy food, and limited opportunities for physical activity.
+                </p>
+            <h3>Lifestyle</h3>
+            <p>>> Poor Diet: <br>A diet high in saturated and trans fats, cholesterol, salt, and added sugars can increase the risk of heart disease. Eating a diet high in fruits, vegetables, whole grains, lean protein, and healthy fats can help reduce the risk of heart disease.
+                <br>>> Lack of Physical Activity: <br>Physical inactivity can increase the risk of heart disease. Regular physical activity, such as brisk walking, cycling, swimming, or dancing, can help reduce the risk of heart disease.
+                <br>>> Smoking: <br>Smoking is a major risk factor for heart disease. Quitting smoking can significantly reduce the risk of heart disease.
+                <br>>> Excessive Alcohol Consumption: <br>Excessive alcohol consumption can increase the risk of high blood pressure, heart failure, and stroke. Limiting alcohol consumption to moderate levels can help reduce the risk of heart disease.
+                <br>>> Obesity and Overweight: <br>Being overweight or obese can increase the risk of heart disease. Maintaining a healthy weight through a balanced diet and regular physical activity can help reduce the risk of heart disease.
+                <br>>> Stress: <br>Chronic stress can contribute to the development of heart disease. Stress management techniques such as meditation, deep breathing, and yoga can help reduce stress and the risk of heart disease.
+                </p>
+            <h3>Medical</h3>
+            <p>>> High Blood Pressure (Hypertension): <br>High blood pressure can increase the workload on the heart and blood vessels, leading to the development of heart disease.
+                <br>>> High Cholesterol: <br>High levels of cholesterol in the blood can contribute to the development of plaque in the arteries, increasing the risk of heart disease.
+                <br>>> Diabetes: <br>People with diabetes are at higher risk of developing heart disease due to the impact of high blood sugar levels on blood vessels and the heart.
+                <br>>> Family History of Heart Disease: <br>Having a close family member, such as a parent or sibling, with heart disease increases an individual's risk of developing heart disease.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--calculation-->
+    <section class="calculator" id="calculator">
+        <div class="calculator-content">
+        <h2 class="heading">Predictor <span></span></h2>
+        <div class="scroll-bar-c">
+        <form action="/" method="POST">
+            <div class="box-0">
+            <div class="box-1">
+                <!--demographic-->
+                <div class="box-2">
+                    <h3>Demographic Informations</h3>
+                    <div class="input-box">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Name" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" id="age" name="age" placeholder="Enter Your Age in range [1 - 100]" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="sex" class="form-label">Gender</label>
+                        <div class="select_option">
+                          <select id="sex" name="sex" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="el" class="form-label">Education level</label>
+                        <div class="select_option">
+                          <select id="el" name="el" >
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">None of this</option>
+                            <option value="1">Lower level of education</option>
+                            <option value="2">Higher level of education</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="gl" class="form-label">Geographic Location</label>
+                        <div class="select_option">
+                          <select id="gl" name="gl" >
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">Air pollution</option>
+                            <option value="1">Lack of access to healthy food</option>
+                            <option value="2">Limited opportunities for physical activity</option>
+                            <option value="3">None of this</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!--life style-->
+                <div class="box-2">
+                    <h3>Lifestyle Informations</h3>
+                    <div class="input-box">
+                        <label for="smoking" class="form-label">Smoking</label>
+                        <div class="select_option">
+                          <select id="smoking" name="smoking" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="alcohol" class="form-label">Excessive Alcohol consumption</label>
+                        <div class="select_option">
+                          <select id="alcohol" name="alcohol" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">No</option>
+                            <option value="1">Limiting alcohol consumption</option>
+                            <option value="1">Higher alcohol consumption</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="Medication" class="form-label">Medication</label>
+                        <div class="select_option">
+                          <select id="Medication" name="Medication" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="pa" class="form-label">Lack of physical activity</label>
+                        <div class="select_option">
+                          <select id="pa" name="pa" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">Regular physical activity</option>
+                            <option value="1">Physical inactivity</option>
+                            <option value="1">None of this</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="diet" class="form-label">Diet</label>
+                        <div class="select_option">
+                          <select id="diet" name="diet" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Medical History Informations-->
+            <div class="box-2">
+                <h3>Medical History Informations</h3>
+                <div class="input-box">
+                    <label for="high_blood_pressure" class="form-label">Blood Pressure</label>
+                    <div class="select_option">
+                        <select id="high_blood_pressure" name="high_blood_pressure" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="time" class="form-label">Cholesterol</label>
+                    <input type="cholesterol" id="cholesterol" placeholder="A number in range [0 - 700]" name="cholesterol" required>
+                </div>
+                <div class="input-box">
+                    <label for="diabetes" class="form-label">Diabetes</label>
+                    <div class="select_option">
+                        <select id="diabetes" name="diabetes" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="creatinine_phosphokinase" class="form-label">Creatinine Phosphokinase</label>
+                    <input type="text" id="creatinine_phosphokinase" placeholder="A number in range [10 U/L - 8000 U/L]" name="creatinine_phosphokinase" required>
+                </div>
+                <div class="input-box">
+                    <label for="ejection_fraction" class="form-label">Ejection Fraction</label>
+                    <input type="text" id="ejection_fraction" placeholder="A number in range [10% - 80%]" name="ejection_fraction" required>
+                </div>
+                <div class="input-box">
+                    <label for="platelets" class="form-label">Platelets</label>
+                    <input type="text" id="platelets" placeholder="A number in range [1000-850000]" name="platelets" required>
+                </div>
+                <div class="input-box">
+                    <label for="anaemia" class="form-label">Anaemia</label>
+                    <div class="select_option">
+                      <select id="anaemia" name="anaemia" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="serum_creatinine" class="form-label">Serum Creatinine</label>
+                    <input type="text" id="serum_creatinine" placeholder="Typically in [0.5 - 10]" name="serum_creatinine" required>
+                </div>
+                <div class="input-box">
+                    <label for="serum_sodium" class="form-label">Serum Sodium</label>
+                    <input type="text" id="serum_sodium" placeholder="A number in range [70 - 180]" name="serum_sodium" required>
+                </div>
+                <div class="input-box">
+                    <label for="time" class="form-label">Heart Rate</label>
+                    <input type="maxhr" id="maxhr" placeholder="A number in range [100 - 240]" name="maxhr" required>
+                </div>
+                <div class="input-box">
+                    <label for="cp" class="form-label">Chest Pain</label>
+                    <div class="select_option">
+                      <select id="cp" name="cp" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="0">No Pain</option>
+                        <option value="1">Right Side chest pain</option>
+                        <option value="5">Left Side chest pain</option>
+                        <option value="2">Angina</option>
+                        <option value="3">Stent Pain</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="fh" class="form-label">Family History of Heart Disease</label>
+                    <div class="select_option">
+                      <select id="fh" name="fh" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="0">Parent</option>
+                        <option value="1">Sibing</option>
+                        <option value="2">No</option>
+                      </select>
+                    </div>
+                </div>
+                <!---------------->
+               
+            </div>
+        </div>
+        <button class="btn" type="submit">Predict the Value</button>                
+        </form>
+      </div>
+    </div>
+    </section>
+    <!--out put
+    <section class="output" id="output">
+        <div class="output-content">
+            <h2 class="heading">Heart Disease Prediction <span></span></h2>
+            <div class="out-box">
+                <h3>{{text1}} {{org}}</h3>
+                <p>{{text2}} {{predict}} {{text3}}</p>
+           </div>
+        </div>
+    </section> 
+    -->
+    
+    <!--about-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="../static/images/a-img.jpg" alt="no">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Us</span></h2>
+            <h3>Heart Disease Prediction</h3>
+            <p>Welcome to our heart disease prediction website! We are a team of IT students dedicated to using the latest technologies to improve the early detection and prevention of heart disease. Our mission is to help people understand their risk of heart disease and take proactive steps to protect their health. We believe that by providing accurate and reliable predictions, we can empower individuals to make informed decisions about their health and well-being. Our team has extensive experience in the fields of cardiology and data analysis, and we use state-of-the-art machine learning algorithms to analyze health data and predict the likelihood of heart disease. Our models are constantly evolving, based on the latest research and clinical data, to ensure the highest level of accuracy. We understand that heart disease can be a complex and intimidating topic, which is why we are committed to providing our users with clear and accessible information. Our website includes resources and educational materials to help users understand their risk factors and take steps to reduce their risk of heart disease. At our core, we are a team of B Tech IT students who are passionate about using technology to improve patient outcomes. We believe that by providing accurate and reliable predictions, we can help individuals take control of their health and live longer, healthier lives. Thank you for visiting our website, and we look forward to helping you better understand your risk of heart disease.</p>
+        </div>
+    </section>
+    <!--contact-->
+    <section class="contact" id="contact">
+        
+        <h2 class="heading">Dev<span>eloper</span></h2>
+        <div class="contact-content">
+            <div class="contact-box">
+                <h4>B.Tech (IT) Student</h4>
+                <p> Hi! My name is akash. I am a B.Tech (IT) final-year student at KCG College of Technology college. During my three and half years of study, I gained knowledge in programming languages such as Python, and HTML & CSS. I also know basics data structures and algorithms and have implemented them in this site. I was full responsible for developing this site. This site user interface designed using HTML & CSS, implementing the machine-learning functionalities using python program and developed this site using python flask frame work.</p>
+                <div class="layer">
+                    <img style="width: 5rem;" src="../static/images/team-lead.png" alt="">
+                    <h3>Akash V</h3>
+                    <p>+91 7708 22 2828 <br>akash--v@hotmail.com</p>
+                </div>
+           </div>
+           
+
+           <!--
+            <div class="contact-box">
+                <img style="width: 5rem;" src="../static/images/users1.png" alt="">
+                <h3>Team Member</h3>
+                <p>Deepak H<br>+91 79045 09434 <br>deepakbullet2020@gmail.com</p>
+            </div>
+
+            <div class="contact-box">
+                <img style="width: 5rem;" src="../static/images/users2.png" alt="">
+                <h3>Team Member</h3>
+                <p>Jeevahariharan B<br>+91 9080440633 <br> jeevahari432@gmail.com</p>
+            </div>
+            -->
+        </div>
+    
+        
+       
+    </section>
+    
+
+    <!--footer design-->
+    <div class="footer">
+        <div class="footer-text">
+            <p>Copyright © 2023 AV. All rights reserved</p>    
+        </div>
+        <div class="footer-iconTop">
+            <p>Version 5.3.2</p>
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </div>
+    
+
+    <!--custom js-->
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+:root {
+    --bg-color: #B8BAC6;
+    --second-bg-color: #ffff;
+    --text-color: #001928;
+    --main-color: #00655F;
+}
+
+/*calculator*/
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.calculator .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.calculator h2 {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.calculator h3 {
+    text-align: center;
+    line-height: 1.2;
+    font-size: 2rem;
+    margin: 1rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.calculator form {
+    max-width: 70cm;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.calculator form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.calculator form .input-box input,
+.calculator form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.726);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.calculator form .input-box .form-label {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.calculator form .input-box input {
+    width: 49%;
+    height: 3rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.103);
+    border: .1rem solid #fff;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+  }
+
+.calculator form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+
+/*inside*/
+.box-0 {
+    display: flex;
+}
+
+.box-1{
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+.box-1 h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;   
+}
+
+.box-2{
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 14px;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-left: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, .1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.box-2 h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;   
+}
+
+.input-box .select_option{
+  position: relative;
+  width: 49%;
+  
+}
+
+.input-box .select_option:before{
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border-radius: 14px solid;
+  pointer-events: none;
+}
+
+.input-box .select_option select{
+  -webkit-appearance: none;
+  height: 3rem;
+  border: .1rem solid #fff;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.103);
+  -moz-appearance:   none;
+  appearance:        none;
+  outline: none;
+  width: 100%;
+  padding: .5rem;
+  padding-left: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  border-radius: .8rem;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.726);
+  margin: .7rem 0;
+}
+
+.input-box .form-label {
+    font-size: 1.5rem;
+    margin: .5rem 0 1rem;
+}
+
+/*out put*/
+.output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+/*scroll-bar*/
+.scroll-bar::-webkit-scrollbar,
+.scroll-bar::-webkit-scrollbar-thumb {
+  width: 5px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
+  background: var(--main-color);
+}
+
+.scroll-bar:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.scroll-bar {
+  background: var(--bg-color);
+  padding: 20px;
+  width: 95vw;
+  height: 37vw;
+  border-radius: 10px;
+  overflow: auto;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: black;
+  box-shadow: 4px 4px 6px rgba(3, 3, 3, 0.418);
+  transition: color .3s ease;
+}
+
+/*scroll-bar-c*/
+.calculator .scroll-bar-c::-webkit-scrollbar,
+.calculator .scroll-bar-c::-webkit-scrollbar-thumb {
+  width: 5px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+}
+
+.calculator .scroll-bar-c::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
+  background: var(--main-color);
+}
+
+.calculator .scroll-bar-c:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.calculator .scroll-bar-c {
+  background: url('../images/form.png');
+  padding: 20px;
+  width: 95vw;
+  height: 37vw;
+  border-radius: 10px;
+  overflow: auto;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: black;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  transition: color .3s ease;
+}
